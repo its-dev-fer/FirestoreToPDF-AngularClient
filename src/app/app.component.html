@@ -1,0 +1,36 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <form [formGroup]='registerForm'>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Nombre:</span>
+            </div>
+            <input type="text" formControlName="nombre" class="form-control" placeholder="Nombre" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon2">Correo:</span>
+            </div>
+            <input type="email" formControlName="correo" class="form-control" placeholder="usuario@dominio.com" aria-describedby="basic-addon2">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">Taller:</span>
+            </div>
+            <input type="text" formControlName="taller" class="form-control" placeholder="Curso de Laravel" aria-describedby="basic-addon3">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon4">Fecha:</span>
+            </div>
+            <input type="date" formControlName="fecha" class="form-control" placeholder="07-02-2019" aria-describedby="basic-addon4">
+          </div>
+          <button type="button" (click)="sendToFirestore()" [disabled]="registerForm.invalid" class="btn btn-dark">Postularme</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
